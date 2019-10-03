@@ -1,0 +1,202 @@
+" Be iMproved
+set nocompatible
+
+" Autocompletion
+set omnifunc=syntaxcomplete#Complete
+
+" Variables Configuration for rmvim
+" Colorscheme
+let rmv_theme='zenburn'
+" Open NERDTree with vim
+let rmv_open_nerdtree_to_start=1
+" Open Nerd Panel with a new tab
+let rmv_open_nerdtree_with_new_tab=1
+" Enabled / Disabled placeholder chars
+let rmv_display_placeholder=1
+" Charactere placeholder for tabulation [2 char]
+let rmv_tab_placeholder='»·'
+" Charactere placeholder for space [1 char]
+let rmv_space_placeholder='·'
+" Enabled / Disabled Ctrl-a for access in your vimrc
+let rmv_quick_access_config=1
+" Enabled / Disabled swap file
+let rmv_swap_file=0
+" Enabled / Disabled Shortcuts
+let rmv_smart_shortcut=1
+" Indentation type [tab || space]
+let rmv_indentation_type="tab"
+" Indentation length
+let rmv_indentation_length=4
+" Relative numbers
+let rmv_enable_numbers=1
+" Gundo activation
+let rmv_enable_gundo=1
+
+" zenburn coloscheme options
+if rmv_theme == "zenburn"
+	let g:zenburn_high_Contrast=1
+	let g:zenburn_old_Visual=1
+	let g:zenburn_force_dark_Background=1
+endif
+
+let g:tube_terminal = "xterm"
+let current_compiler = "gcc"
+
+" Syntastic Plugin
+let g:syntastic_cpp_compiler = 'gcc'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++ -Wall -Werror -Wextra'
+let g:syntastic_check_on_open = 1
+let g:syntastic_enable_signs = 1
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_remove_include_errors = 1
+let g:syntastic_c_remove_include_errors = 1
+let g:syntastic_c_include_dirs = ['../../../include', '../../include','../include','./include']
+
+" Airline Plugin
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tmuxline#enabled = 1
+
+" Gundo Plugin
+let g:gundo_width = 60
+let g:gundo_preview_height = 40
+let g:gundo_right = 1
+let g:gundo_close_on_revert = 1
+
+" Multi-cursor Plugin
+let g:multi_cursor_next_key = '<C-d>'
+let g:multi_cursor_prev_key = '<C-p>'
+let g:multi_cursor_skip_key = '<C-l>'
+let g:multi_cursor_quit_key = '<Esc>'
+let g:multi_cursor_start_key = '<F6>'
+let g:multi_cursor_start_word_key = '<nop>'
+
+" NerdCommenter Plugin
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+
+" CtrlP Plugin
+let g:ctrlp_map = '<C-f>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" UltiSnips Plugin
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
+
+" EasyMotion Plugin
+map	<leader> <Plug>(easymotion-prefix)
+nmap <Space> <Plug>(easymotion-bd-w)
+nmap <leader>w <Plug>(easymotion-overwin-w)
+
+" Pathogen plugin management
+call pathogen#infect()
+call pathogen#helptags()
+
+syntax on
+filetype plugin indent on
+
+" netrw
+autocmd FileType netrw setl bufhidden=wipe
+let g:netrw_liststyle = 3
+
+" General stuff
+set encoding=utf-8
+set mouse=a
+set ai
+set nu
+
+" Colors
+if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
+  set t_Co=256
+endif
+
+" Security
+set modelines=0
+
+" refreshing buffer when external command is run
+set autoread
+
+" Navigation
+set whichwrap+=<,>,h,l,[,]
+set scrolloff=5 " number of lines kept up/down while scrolling
+set backspace=eol,start,indent
+nnoremap j gj
+nnoremap k gk
+nnoremap <C-E> 3<C-E>
+nnoremap <C-Y> 3<C-Y>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+
+" Grey lines
+set cursorline
+"set cc=80
+hi CursorLine term=bold cterm=bold guibg=Grey40
+
+" Splitting
+set splitright
+
+" Folding
+set foldenable
+set foldlevelstart=10
+set foldnestmax=10
+set foldmethod=indent
+nnoremap _ za
+
+" Search
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set showmatch
+
+" Toggles
+noremap <F2>	:!(make)<CR>
+
+" Disable middle mouse
+map <MiddleMouse> <Nop>
+imap <MiddleMouse> <Nop>
+
+" ============================================================================
+
+execute "set tabstop=". rmv_indentation_length
+execute "set shiftwidth=". rmv_indentation_length
+execute "set softtabstop=". rmv_indentation_length
+
+if rmv_indentation_type == "space"
+	set expandtab
+endif
+
+if !empty(rmv_enable_gundo)
+	noremap <C-g>	:GundoToggle<CR>
+else
+	let g:gundo_disable = 1
+endif
+
+if !empty(rmv_smart_shortcut)
+	noremap <C-Tab>				:bnext<CR>
+	noremap <S-Tab>				:tabnext<CR>
+endif
+
+if !empty(rmv_quick_access_config)
+	noremap <C-a>		:tabedit ~/.vimrc<CR>
+endif
+
+if !empty(rmv_theme)
+	execute "colorscheme ".  rmv_theme
+endif
+
+if empty(rmv_swap_file)
+	set noswapfile
+endif
+
+if !empty(rmv_display_placeholder)
+	execute "set list listchars=tab:". rmv_tab_placeholder .",trail:". rmv_space_placeholder
+endif
+
+let g:enable_numbers = rmv_enable_numbers

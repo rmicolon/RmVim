@@ -1,0 +1,25 @@
+priority 1
+extends c
+
+## Class
+# canonical class
+snippet ccl
+	/*! \class $1
+	 *
+	 *  ${4:Class description}
+	 */
+	class ${1:`!p snip.rv = snip.basename`}
+	{
+	public:
+		$1( void );
+		$1( ${2} );
+		$1( $1 const & src );
+		virtual ~$1( void );
+
+		$1 &	operator=( $1 const & rhs );
+	
+	private:
+		${0}
+
+	};
+endsnippet

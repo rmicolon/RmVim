@@ -1,0 +1,54 @@
+[submodule "rmvim/bundle/auto-pairs"]
+	path = rmvim/bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule "rmvim/bundle/L9"]
+	path = rmvim/bundle/L9
+	url = https://github.com/vim-scripts/L9.git
+[submodule "rmvim/bundle/ctrlp.vim"]
+	path = rmvim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "rmvim/bundle/numbers.vim"]
+	path = rmvim/bundle/numbers.vim
+	url = https://github.com/myusuf3/numbers.vim.git
+[submodule "rmvim/bundle/nerdcommenter"]
+	path = rmvim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "rmvim/bundle/gundo.vim"]
+	path = rmvim/bundle/gundo.vim
+	url = https://github.com/sjl/gundo.vim.git
+[submodule "rmvim/bundle/tlib_vim"]
+	path = rmvim/bundle/tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "rmvim/bundle/syntastic"]
+	path = rmvim/bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "rmvim/bundle/ultisnips"]
+	path = rmvim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "rmvim/bundle/vim-addon-mw-utils"]
+	path = rmvim/bundle/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "rmvim/bundle/vim-airline"]
+	path = rmvim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "rmvim/bundle/vim-airline-themes"]
+	path = rmvim/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "rmvim/bundle/vim-easymotion"]
+	path = rmvim/bundle/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion.git
+[submodule "rmvim/bundle/vim-autocomplpop"]
+	path = rmvim/bundle/vim-autocomplpop
+	url = https://github.com/othree/vim-autocomplpop.git
+[submodule "rmvim/bundle/vim-multiple-cursors"]
+	path = rmvim/bundle/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors.git
+[submodule "rmvim/bundle/vim-snippets"]
+	path = rmvim/bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
+[submodule "rmvim/bundle/vim-tmux-navigator"]
+	path = rmvim/bundle/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
+[submodule "rmvim/bundle/vim-surround"]
+	path = rmvim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
